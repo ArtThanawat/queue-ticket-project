@@ -1,0 +1,31 @@
+<app-queue-frame class="flex flex-1 flex-col" code="IT 05-3">
+  <div class="space-y-1">
+    <h1 class="text-xl font-bold text-slate-900">จัดการระบบ</h1>
+    <p class="text-sm text-slate-500">คุณกำลังจะทำการล้างลำดับคิวทั้งหมด</p>
+  </div>
+
+  <div class="border-y border-slate-100 py-6">
+    <p class="text-sm text-slate-400">คิวปัจจุบัน: <span class="font-bold text-slate-900">{{ ticket()?.queueNumber ?? '-' }}</span></p>
+  </div>
+
+  <div class="flex flex-col gap-2">
+    <button
+      pButton
+      type="button"
+      class="w-full"
+      [label]="loading() ? 'กำลังล้างคิว...' : 'ยืนยันการล้างคิว'"
+      severity="danger"
+      [disabled]="loading()"
+      (click)="confirmResetQueue()"
+    ></button>
+
+    <button
+      pButton
+      type="button"
+      class="w-full"
+      label="ยกเลิก"
+      severity="secondary"
+      (click)="goToReception()"
+    ></button>
+  </div>
+</app-queue-frame>

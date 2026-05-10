@@ -1,0 +1,52 @@
+@import "@fontsource/noto-sans-thai/400.css";
+@import "@fontsource/noto-sans-thai/500.css";
+@import "@fontsource/noto-sans-thai/600.css";
+@import "@fontsource/noto-sans-thai/700.css";
+@import "tailwindcss";
+@import "tailwindcss-primeui";
+@import "primeicons/primeicons.css";
+
+:root {
+  --font-family: "Noto Sans Thai", sans-serif;
+}
+
+html,
+body {
+  font-family: "Noto Sans Thai", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8fafc; /* slate-50 */
+}
+
+.app-confirm-dialog .p-dialog-header {
+  background: #fff;
+  color: #000;
+}
+
+.app-confirm-dialog .p-dialog-title {
+  color: #000;
+}
+
+.app-confirm-dialog .p-dialog-header .p-button {
+  color: #000;
+}
+
+.app-toast .p-toast-message {
+  margin: 0 0 0.75rem;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.app-toast .p-toast-message-content {
+  padding: 0;
+  border: 0;
+}
+
+.app-toast .p-toast-message-icon,
+.app-toast .p-toast-summary,
+.app-toast .p-toast-detail,
+.app-toast .p-toast-close-button {
+  display: none;
+}
