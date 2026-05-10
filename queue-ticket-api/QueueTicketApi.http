@@ -1,0 +1,21 @@
+@QueueTicketApi_HostAddress = http://localhost:5001
+
+GET {{QueueTicketApi_HostAddress}}/api/health
+Accept: application/json
+
+###
+
+GET {{QueueTicketApi_HostAddress}}/api/queue-tickets/current
+Accept: application/json
+
+###
+
+POST {{QueueTicketApi_HostAddress}}/api/queue-tickets
+Accept: application/json
+
+###
+
+POST {{QueueTicketApi_HostAddress}}/api/queue-tickets/reset
+Accept: application/json
+
+###
