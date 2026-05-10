@@ -1,0 +1,22 @@
+<app-queue-frame class="flex flex-1 flex-col" code="IT 05-2">
+  <div class="space-y-1">
+    <p class="text-sm font-medium text-slate-500 uppercase tracking-wide">หมายเลขคิวของคุณ</p>
+    <p class="text-7xl font-bold text-slate-900">{{ ticket()?.queueNumber ?? '-' }}</p>
+  </div>
+
+  <div class="rounded-lg bg-slate-50 p-3">
+    <p class="text-xs font-medium text-slate-500">วันที่ / เวลาออกบัตร</p>
+    <p class="mt-1 text-sm text-slate-700">
+      {{ ticket()?.createdAt | thaiDateTime }}
+    </p>
+  </div>
+
+  <button
+    pButton
+    type="button"
+    class="w-full"
+    label="กลับไปหน้ารับบัตรคิว"
+    severity="secondary"
+    (click)="goToReception()"
+  ></button>
+</app-queue-frame>

@@ -1,0 +1,43 @@
+<p-toast position="top-right" styleClass="app-toast">
+  <ng-template let-message pTemplate="message">
+    <div
+      class="flex w-full items-start gap-3 rounded-lg border bg-white p-4 shadow-lg"
+      [class.border-emerald-200]="message.severity === 'success'"
+      [class.border-red-200]="message.severity === 'error'"
+      [class.border-amber-200]="message.severity === 'warn'"
+      [class.border-sky-200]="message.severity === 'info'"
+    >
+      <div
+        class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full"
+        [class.bg-emerald-50]="message.severity === 'success'"
+        [class.text-emerald-600]="message.severity === 'success'"
+        [class.bg-red-50]="message.severity === 'error'"
+        [class.text-red-600]="message.severity === 'error'"
+        [class.bg-amber-50]="message.severity === 'warn'"
+        [class.text-amber-600]="message.severity === 'warn'"
+        [class.bg-sky-50]="message.severity === 'info'"
+        [class.text-sky-600]="message.severity === 'info'"
+      >
+        @switch (message.severity) {
+          @case ('error') {
+            <i class="pi pi-times text-sm"></i>
+          }
+          @case ('warn') {
+            <i class="pi pi-exclamation-triangle text-sm"></i>
+          }
+          @case ('info') {
+            <i class="pi pi-info text-sm"></i>
+          }
+          @default {
+            <i class="pi pi-check text-sm"></i>
+          }
+        }
+      </div>
+
+      <div class="min-w-0 flex-1">
+        <p class="font-semibold text-slate-950">{{ message.summary }}</p>
+        <p class="mt-1 text-sm leading-5 text-slate-600">{{ message.detail }}</p>
+      </div>
+    </div>
+  </ng-template>
+</p-toast>
